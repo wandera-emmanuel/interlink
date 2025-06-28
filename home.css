@@ -121,7 +121,8 @@ nav ul li a {
     height: auto;
     border-radius: 10px;
 }
-/*animations*/
+
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -157,4 +158,161 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Updated dropdown styles */
+nav ul li .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1;
+    margin-top: 5px;
+    right: 0;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown-content .dropdown-item {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li .dropdown-content .dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ensure nav compatibility */
+nav ul li {
+    position: relative;
+    list-style: none;
+}
+
+/* Blog Styles */
+body.blog {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header.blog-header {
+    text-align: center;
+    padding: 1px;
+    background-color: #1a3c3c;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in;
+}
+
+header.blog-header h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    animation: slideDown 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #00cc99;
+    margin-bottom: 30px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+.article {
+    margin-bottom: 40px;
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    color: #1a3c3c;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1a3c3c;
+}
+
+.author-title {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1a3c3c;
+    font-style: italic;
+    padding: 15px 0;
+    background-color: #f0f8f5;
+    border-left: 4px solid #00cc99;
+    margin: 20px 0;
+}
+
+.cookie-notice {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    color: #7f8c8d;
+}
+
+a {
+    color: #00cc99;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00b386;
+}
+
+/* Responsive Design for Blog */
+@media (max-width: 768px) {
+    body.blog {
+        padding: 10px;
+    }
+
+    header.blog-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .article h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* New Container Styles */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-in;
 }

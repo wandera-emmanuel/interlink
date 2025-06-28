@@ -1,106 +1,302 @@
+
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #333;
     line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
+/* Header Styles */
 header {
-    background-color: #1a3c34;
+    background-color: #1a3c3c;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 10px 20px;
 }
 
-.header-content h1 {
-    font-size: 1.2em;
-    margin: 0;
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.header-top .view-opportunity {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav {
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
 }
 
-nav a {
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00cc99;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.9em;
+    font-size: 16px;
 }
 
-nav a.join-btn {
-    background-color: #a3c9a8;
-    padding: 5px 15px;
+.cta-button {
+    background-color: #00cc99;
+    padding: 8px 15px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.learn-more-content {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+.cta-button:hover {
+    background-color: #00b386;
 }
 
-.learn-more-content h2 {
-    font-size: 2.5em;
-    color: #1a3c34;
+/* Hero Section Styles */
+.hero {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 50px 20px;
+    background-color: #fff;
+    animation: fadeIn 1.5s ease-in;
 }
 
-.learn-more-content h3 {
-    font-size: 1.5em;
-    color: #1a3c34;
-    margin-top: 30px;
+.hero-content h1 {
+    font-size: 48px;
+    color: #1a3c3c;
     margin-bottom: 10px;
+    animation: slideDown 1s ease-out;
 }
 
-.learn-more-content p {
-    font-size: 1.1em;
+.hero-content p {
+    font-size: 18px;
     color: #666;
     margin-bottom: 20px;
 }
 
-.learn-more-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.learn-more-content ul li {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.learn-more-content ul li:before {
-    content: "•";
-    color: #1a3c34;
-    position: absolute;
-    left: 0;
-}
-
-.view-btn {
-    background-color: #1a3c34;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 1em;
+.hero-cta {
     display: inline-block;
-    margin-top: 5px;
+    background-color: #1a3c3c;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
+.hero-cta:hover {
+    background-color: #0f2c2c;
+}
+
+.hero-image {
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-in 0.5s backwards;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+
+/* Footer Styles */
 footer {
-    background-color: #1a3c34;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
+    padding: 20px;
+    background-color: #1a3c3c;
+    color: #fff;
+    position: relative;
     bottom: 0;
-    height: 3%;
+    width: 100%;
+}
+
+/* Updated dropdown styles */
+nav ul li .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1;
+    margin-top: 5px;
+    right: 0;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown-content .dropdown-item {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li .dropdown-content .dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ensure nav compatibility */
+nav ul li {
+    position: relative;
+    list-style: none;
+}
+
+/* Blog Styles (Added without modifying existing Enter-link styles) */
+body.blog {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header.blog-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a3c3c;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in;
+}
+
+header.blog-header h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    animation: slideDown 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #00cc99;
+    margin-bottom: 30px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+.article {
+    margin-bottom: 40px;
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    color: #1a3c3c;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1a3c3c;
+}
+
+.author-title {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1a3c3c;
+    font-style: italic;
+    padding: 15px 0;
+    background-color: #f0f8f5;
+    border-left: 4px solid #00cc99;
+    margin: 20px 0;
+}
+
+.cookie-notice {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    color: #7f8c8d;
+}
+
+a {
+    color: #00cc99;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00b386;
+}
+
+/* Responsive Design for Blog */
+@media (max-width: 768px) {
+    body.blog {
+        padding: 10px;
+    }
+
+    header.blog-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .article h2 {
+        font-size: 1.3rem;
+    }
 }
